@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import (
     AgreementListView,
+    AgreementDetailView,
     DashboardStatsView,
     CreateAgreementView,
     BulkAssignView
@@ -9,6 +10,8 @@ from .views import (
 urlpatterns = [
 
     path('list/', AgreementListView.as_view()),
+    
+    path('<int:pk>/', AgreementDetailView.as_view()),
 
     path('dashboard/', DashboardStatsView.as_view()),
 

@@ -6,15 +6,18 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
 
+    # authentication app
+    path('api/auth/', include('authentication.urls')),
+
     # dashboard app
     path('api/dashboard/', include('Legal_Dashboard.dashboard.urls')),
 
     # document validation app
     path('api/document-validation/', include('Legal_Dashboard.Document_Validation.urls')),
-    path(
-        "agreement-approvals/",
-        include("Legal_Dashboard.Agreement_Approvals.urls"),
-)]
+    
+    # agreement approvals app
+    path('api/agreement-approvals/', include('Legal_Dashboard.Agreement_Approvals.urls')),
+]
 
 # Serve media files during development
 if settings.DEBUG:
