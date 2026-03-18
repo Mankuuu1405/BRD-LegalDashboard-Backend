@@ -7,7 +7,6 @@ class Document(models.Model):
         ('Invalid', 'Invalid'),
     ]
 
-    document_id = models.AutoField(primary_key=True)  # Unique ID
     name = models.CharField(max_length=255)
     document_type = models.CharField(max_length=100)
     client_name = models.CharField(max_length=255)
@@ -16,10 +15,11 @@ class Document(models.Model):
     issues = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return f"{self.document_id} - {self.name}"
+        return f"{self.id} - {self.name}"
 
 
 class UploadDocuments(models.Model):
+    document = models.ForeignKey(Document, on_delete=models.CASCADE, null=True, blank=True)
     document_type = models.CharField(max_length=100)
     client_name = models.CharField(max_length=255)
     document_file = models.FileField(upload_to='uploaded_documents/')

@@ -3,7 +3,7 @@ from .models import Document, UploadDocuments
 
 @admin.register(Document)
 class DocumentAdmin(admin.ModelAdmin):
-    list_display = ('document_id', 'name', 'document_type', 'client_name', 'status', 'upload_date')
+    list_display = ('id', 'name', 'document_type', 'client_name', 'status', 'upload_date')
     list_filter = ('status', 'document_type')
     search_fields = ('name', 'client_name', 'document_type')
 

@@ -15,17 +15,17 @@ class Migration(migrations.Migration):
             old_name='client',
             new_name='client_name',
         ),
-        migrations.RemoveField(
-            model_name='document',
-            name='id',
-        ),
-        migrations.RemoveField(
-            model_name='uploaddocuments',
-            name='document',
-        ),
-        migrations.AddField(
-            model_name='document',
-            name='document_id',
-            field=models.AutoField(primary_key=True, serialize=False),
-        ),
+        # migrations.RemoveField(
+        #     model_name='document',
+        #     name='id',
+        # ),
+        # migrations.RemoveField(
+        #     model_name='uploaddocuments',
+        #     name='document',
+        # ),
+        # migrations.AddField(
+        #     model_name='document',
+        #     name='document_id',
+        #     field=models.AutoField(primary_key=True, serialize=False),
+        # ),
     ]
