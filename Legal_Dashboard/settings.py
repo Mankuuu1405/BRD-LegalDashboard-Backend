@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
+    'django_filters',
 
     'authentication',
     'Legal_Dashboard.dashboard',
@@ -82,24 +83,18 @@ WSGI_APPLICATION = 'Legal_Dashboard.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'DB1',            # Your PostgreSQL database name
-        'USER': 'postgres',       # PostgreSQL username
-        'PASSWORD': 'srinidhi',   # Password you set during installation
-        'HOST': 'localhost',      # Usually localhost
-        'PORT': '5432',           # Default PostgreSQL port
-    },
-    'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'postgresql': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'DB2',            # Your PostgreSQL database name
+        'USER': 'postgres',       # PostgreSQL username
+        'PASSWORD': 'Alex@123',   # Password you set during installation
+        'HOST': 'localhost',      # Usually localhost
+        'PORT': '5432',           # Default PostgreSQL port
     }
 }
 
@@ -182,3 +177,4 @@ SIMPLE_JWT = {
     'USER_ID_FIELD': 'id',
     'USER_ID_CLAIM': 'user_id',
 }
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
